@@ -1,2 +1,2 @@
-slacks/token.rb
-sqlite.db
+config/token.rb
+db/sqlite.db
