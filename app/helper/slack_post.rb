@@ -1,8 +1,7 @@
 require 'slack'
 
 # slack configuration
-$:.unshift File.dirname(__FILE__)
-require "token" # set your $token in ./token.rb
+require_relative "../../config/token" # set your $token in /config/token.rb
 Slack.configure do |config|
   config.token = $token
 end

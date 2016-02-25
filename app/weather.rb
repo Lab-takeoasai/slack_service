@@ -1,9 +1,7 @@
 require 'net/http'
 require 'uri'
 require 'json'
-
-$:.unshift File.dirname(__FILE__)
-require 'slack_post'
+require_relative 'helper/slack_post'
 
 
 # Weather Report Service livedoor: 130010=Tokyo
