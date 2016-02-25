@@ -1,11 +1,15 @@
 source "https://rubygems.org"
 
+# slack
 gem 'slack-api'
+
+# crontab
 gem 'whenever'
+
+# json & rss
 gem 'json'
-gem 'sinatra'
-gem 'sinatra-reloader'
 gem 'feedjira'
-gem 'addressable', require: 'addressable/uri'
+
+# DB
 gem 'activerecord'
 gem 'sqlite3'
