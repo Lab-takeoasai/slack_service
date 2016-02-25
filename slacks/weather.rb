@@ -1,14 +1,9 @@
-require 'slack'
 require 'net/http'
 require 'uri'
 require 'json'
 
-# Slack configuration
 $:.unshift File.dirname(__FILE__)
-require "token" # set your $token in ./token.rb
-Slack.configure do |config|
-  config.token = $token
-end
+require 'slack_post'
 
 
 # Weather Report Service livedoor: 130010=Tokyo
@@ -21,10 +16,8 @@ for day in json["forecasts"]
   weather = {}
   weather[:date] = day["dateLabel"]
   weather[:telop] = day["telop"]
-  weather[:min] = day["temperature"]["min"]["celsius"] unless day["temperature"]["min"].nil?
-  weather[:max] = day["temperature"]["max"]["celsius"] unless day["temperature"]["max"].nil?
-  weather[:min] = "-" if weather[:min].nil?
-  weather[:max] = "-" if weather[:max].nil?
+  weather[:min] = day["temperature"]["min"].nil? ? "-" : day["temperature"]["min"]["celsius"]
+  weather[:max] = day["temperature"]["max"].nil? ? "-" : day["temperature"]["max"]["celsius"]
   weather_reports << weather
 end
 
@@ -34,7 +27,5 @@ for w in weather_reports
 end
 
 
-# Post it to my slack
-if Slack.auth_test["ok"] then
-  Slack.chat_postMessage(text: description, username: 'Weather Report' , channel: '#general')
-end
+# post
+slack_post(description, "Weather Report", "#general")
