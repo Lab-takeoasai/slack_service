@@ -1,2 +1,11 @@
 # slack_service
-とりあえずIFTTTの天気予報がかなりいい加減だったので自分でやるのを最初に考える
+IFTTTの天気予報がかなりいい加減だったので
+livedoor weather apiでそこそこの天気を通知するものを作成した
+weather.rb
+
+##next:
++ Circle CIとかの継続のテスト
++ Code climateとかcoverallとかの利用
++ heroku
+
+とにかくwebアプリをdeployする知見を得る
