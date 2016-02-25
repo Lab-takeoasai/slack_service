@@ -1,7 +1,7 @@
 require 'net/http'
 require 'uri'
 require 'json'
-require_relative 'helper/slack_post'
+require_relative 'helpers/slack_post'
 
 
 # Weather Report Service livedoor: 130010=Tokyo
