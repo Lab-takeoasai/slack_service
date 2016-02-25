@@ -1,12 +1,10 @@
-require 'active_record'
 require 'logger'
+require_relative './app/helpers/record_establish'
+
+
+MIGRATIONS_DIR = 'db/migrate'
 
 namespace :db do
-  MIGRATIONS_DIR = 'db/migrate'
-  ActiveRecord::Base.establish_connection(
-    adapter:   'sqlite3',
-    database:  'db/sqlite.db'
-  )
   ActiveRecord::Base.logger = Logger.new('db/database.log')
 
   desc "Migrate the database"

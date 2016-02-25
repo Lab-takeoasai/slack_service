@@ -1,3 +1,4 @@
 config/token.rb
 config/database.yml
 db/sqlite.db
+db/*.log
