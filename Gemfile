@@ -17,3 +17,7 @@ gem 'pg', groups: %w(production), require: false
 
 # github
 gem 'octokit', "~> 4.0"
+
+# server
+gem 'sinatra'
+gem 'sinatra-contrib'
