@@ -21,3 +21,5 @@ gem 'octokit', "~> 4.0"
 # server
 gem 'sinatra'
 gem 'sinatra-contrib'
+gem 'gctools'
+gem 'rhebok'
