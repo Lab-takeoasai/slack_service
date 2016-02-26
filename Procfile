@@ -1,1 +1,1 @@
-web: bundle exec rackup --port $PORT -s Rhebok -O OobGC=yes config.ru
+web: bundle exec rackup --port $PORT -s Rhebok -O OobGC=yes ./config/config.ru
