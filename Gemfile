@@ -12,4 +12,8 @@ gem 'feedjira'
 
 # DB
 gem 'activerecord'
-gem 'sqlite3'
+gem 'sqlite3', groups: %w(test development), require: false
+gem 'pg', groups: %w(production), require: false
+
+# github
+gem 'octokit'
