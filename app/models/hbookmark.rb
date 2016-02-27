@@ -9,7 +9,7 @@ class HBookmark < ActiveRecord::Base
   HB_BASE_URL = 'http://b.hatena.ne.jp/search/'.freeze
 
   def slack
-    text = @title + "\n" + @url + "\n" + (@summary.nil? ? '' : @summary)
+    text = title + "\n" + url + "\n" + (summary.nil? ? '' : summary)
     slack_post(text, 'Hatena bookmark', '#general')
 
     self.slacked = true
