@@ -3,4 +3,4 @@ require_relative 'models/HBookmark'
 
 HBookmark.stockByTag("ライフハック")
 
-#HBookmark.unslacked.first.slack
+HBookmark.unslacked.first.slack
