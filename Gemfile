@@ -14,6 +14,7 @@ gem 'feedjira'
 gem 'activerecord'
 gem 'sqlite3', groups: %w(test development), require: false
 gem 'pg', groups: %w(production), require: false
+gem 'dotenv'
 
 # github
 gem 'octokit', "~> 4.0"

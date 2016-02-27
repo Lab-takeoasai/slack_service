@@ -1,6 +1,10 @@
-require 'yaml'
-require "active_record"
+require 'active_record'
+require 'dotenv'
 
-config = YAML.load_file(File.join(File.dirname(__FILE__), "../../config/database.yml"))
-
-ActiveRecord::Base.establish_connection(config)
+dev_config = {
+  :adapter => 'sqlite3',
+  :database => 'db/sqlite.db',
+  :encoding => 'utf8',
+}
+Dotenv.load
+ActiveRecord::Base.establish_connection(ENV["DATABASE_URL"] || dev_config)

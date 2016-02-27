@@ -1,9 +1,10 @@
 require 'slack'
+require 'dotenv'
 
 # slack configuration
-require_relative "../../config/token" # set your $token in /config/token.rb
+Dotenv.load
 Slack.configure do |config|
-  config.token = $token
+  config.token = ENV["MY_SLACK_TOKEN"]
 end
 
 # Post a text to #channel slack as username
