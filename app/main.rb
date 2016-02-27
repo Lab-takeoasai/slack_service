@@ -1,27 +1,27 @@
 require 'sinatra'
 require 'sinatra/reloader'
 
-require_relative "models/HBookmark"
-require_relative "models/LWeather"
+require_relative 'models/hbookmark'
+require_relative 'models/LWeather'
 
-get "/" do
-  @title = "main"
+get '/' do
+  @title = 'main'
 
   erb :index
 end
 
-get "/weather" do
-  @title = "weather"
+get '/weather' do
+  @title = 'weather'
 
   LWeather.report.slack
 
   erb :index
 end
 
-get "/hatena" do
-  @title = "hatena bookmark"
+get '/hatena' do
+  @title = 'hatena bookmark'
 
-  HBookmark.stockByTag("ライフハック")
+  HBookmark.stock_by_tag('ライフハック')
   HBookmark.unslacked.first.slack
 
   erb :index

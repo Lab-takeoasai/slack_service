@@ -98,6 +98,7 @@ DEPENDENCIES
   feedjira
   gctools
   json
+  nokogiri
   octokit (~> 4.0)
   pg
   rhebok

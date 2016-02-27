@@ -6,9 +6,10 @@ gem 'slack-api'
 # crontab
 gem 'whenever'
 
-# json & rss
+# json & rss & scraping
 gem 'json'
 gem 'feedjira'
+gem 'nokogiri'
 
 # DB
 gem 'activerecord'
