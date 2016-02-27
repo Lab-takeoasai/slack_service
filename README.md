@@ -6,6 +6,10 @@ weather.rb
 ##next:
 + Circle CIとかの継続のテスト
 + Code climateとかcoverallとかの利用
-+ heroku
++ ~~heroku~~ Done
++ weatherとかをcronで動かす
 
 とにかくwebアプリをdeployする知見を得る
+
+Deployed to heroku
+http://slack-both.herokuapp.com
