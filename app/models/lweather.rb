@@ -13,9 +13,8 @@ class LWeather
   end
 
   def slack
-    text = @description + "\n----------\n"
-    @reports.each do |w|
-      text += "#{w[:date]}: #{w[:telop]}, 最低気温 #{w[:min]}°C 最高気温 #{w[:max]}°C\n"
+    text = @reports.inject(@description + "\n\n") do |a, w|
+      a + "#{w[:date]}: #{w[:telop]}, 最低気温 #{w[:min]}°C 最高気温 #{w[:max]}°C\n"
     end
 
     slack_post(text, 'Weather Report', '#general')
@@ -27,14 +26,13 @@ class LWeather
     json = JSON.parse(Net::HTTP.get(uri))
 
     description = json['description']['text'].gsub("\n\n", "\n")
-    weather_reports = []
-    json['forecasts'].each do |day|
-      weather = {}
-      weather[:date] = day['dateLabel']
-      weather[:telop] = day['telop']
-      weather[:min] = day['temperature']['min'].nil? ? '-' : day['temperature']['min']['celsius']
-      weather[:max] = day['temperature']['max'].nil? ? '-' : day['temperature']['max']['celsius']
-      weather_reports << weather
+    weather_reports = json['forecasts'].map do |day|
+      {
+        telop: day['telop'],
+        date: day['dateLabel'],
+        min: day['temperature']['min'].nil? ? '-' : day['temperature']['min']['celsius'],
+        max: day['temperature']['max'].nil? ? '-' : day['temperature']['max']['celsius']
+      }
     end
 
     new(description, weather_reports)

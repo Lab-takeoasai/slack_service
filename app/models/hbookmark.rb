@@ -5,6 +5,7 @@ require_relative '../helpers/slack_post'
 # gets favorite Hatena bookmarks which are starred more than 1,000 times
 class HBookmark < ActiveRecord::Base
   validates_uniqueness_of :url
+
   USERS = 1000
   HB_BASE_URL = 'http://b.hatena.ne.jp/search/'.freeze
 
