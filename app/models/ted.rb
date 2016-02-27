@@ -39,7 +39,3 @@ class Ted
     @summary[lang]
   end
 end
-
-t = Ted.new(1183)
-#puts t.title(:ja)
-puts t.description(:ja)

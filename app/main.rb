@@ -2,7 +2,7 @@ require 'sinatra'
 require 'sinatra/reloader'
 
 require_relative 'models/hbookmark'
-require_relative 'models/LWeather'
+require_relative 'models/lweather'
 
 get '/' do
   @title = 'main'
