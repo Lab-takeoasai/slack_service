@@ -21,5 +21,3 @@ class AmazonItem
     end
   end
 end
-
-p AmazonItem.search('tofle')
