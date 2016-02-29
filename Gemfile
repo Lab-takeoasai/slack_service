@@ -1,4 +1,4 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
 # slack
 gem 'slack-api'
@@ -17,8 +17,11 @@ gem 'sqlite3', groups: %w(test development), require: false
 gem 'pg', groups: %w(production), require: false
 gem 'dotenv'
 
+# Amazon
+gem 'amazon-ecs'
+
 # github
-gem 'octokit', "~> 4.0"
+gem 'octokit', '~> 4.0'
 
 # server
 gem 'sinatra'
